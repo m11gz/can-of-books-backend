@@ -1,11 +1,11 @@
 # CAN OF BOOKS BACKEND
 
 **Author**: Miguel Rodriguez
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Version**: 1.0.1 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
 
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+<!-- USER LOGS ON TO OUR WEBSITE AND CLICK FOR BOOKS THAT HAVE IMPACTED OUR LIVES FOR THE BETTER.  -->
 
 ## Getting Started
 
@@ -13,27 +13,25 @@
 
 ## Architecture
 
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+<!-- JAVASCIPT, HTML, CSS, REACT, NETLIFY, HEROKU-->
 
 ## Change Log
 
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+<!-- 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
 
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+<!-- D. Tusia  -->
 
-Name of feature: **\*\***\*\***\*\***\_\_\_\_**\*\***\*\***\*\***
+Name of feature: PROGRAM FOUNDATION
 
-Estimate of time needed to complete: **\_**
+Estimate of time needed to complete: **30 mins**
 
-Start time: **\_**
+Start time: **2:30 08/29**
 
-Finish time: **\_**
+Finish time: **3:00 08/29**
 
-Actual time needed to complete: **\_**
+Actual time needed to complete: **30 mins**
 
 ## LOGISTICS
 
