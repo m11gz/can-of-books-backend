@@ -12,7 +12,7 @@ async function seed() {
     status: 'In-Stock!'
   });
 
-  console.log('Book 1 ccreated');
+  console.log('Book 1 created');
 
   await Book.create({
     title: 'Book 2',
@@ -20,15 +20,15 @@ async function seed() {
     status: 'Out of Stock!'
   });
 
-  console.log('Book 1 ccreated');
+  console.log('Book 1 created');
 
   await Book.create({
     title: 'Book 3',
     description: 'A book',
     status: 'In-Stock!'
   });
-  
-  console.log('Book 1 ccreated');
+
+  console.log('Book 1 created');
 
   mongoose.disconnect();
 }
