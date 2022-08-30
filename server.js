@@ -12,7 +12,6 @@ mongoose.connect(process.env.DB_URL);
 
 // Schema(if we want to interact with that model)
 const Book = require('./models/books.js');
-const { response } = require('express');
 
 //add validation to confirm we are wired up to our mongo DB
 const db = mongoose.connection;
@@ -20,7 +19,6 @@ db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function () {
   console.log('Mongoose is Connected');
 });
-
 
 // ROUTES
 app.get('/books', getBooks);
@@ -34,7 +32,7 @@ app.get('*', (request, response) => {
   response.status(404).send('Not available');
 });
 
-async function getBooks(request, reponse) {
+async function getBooks(request, response, next) {
   try {
     let bookData = await Book.find();
     response.status(200).send(bookData);
