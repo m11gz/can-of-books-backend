@@ -28,6 +28,7 @@ db.once('open', function () {
 app.get('/books', getBooks);
 app.post('/books', postBooks);
 app.delete('/books/:id', deleteBooks);
+app.put('/books/:id', putBooks);
 
 app.get('/', (request, response) => {
   response.status(200).send('Welcome!');
@@ -57,6 +58,7 @@ async function postBooks(req, res, next) {
     next(err);
   }
 }
+
 async function deleteBooks(req, res, next) {
   console.log(req.params.id);
   try {
@@ -66,8 +68,19 @@ async function deleteBooks(req, res, next) {
     next(err);
   }
 }
+
+async function putBooks(req, res, next) {
+  try {
+    let id = req.params.id;
+    let updatedBook = await Book.findByIdAndUpdate(id, req.body, {new: true, overwrtie: true});
+    res.status(200).send(updatedBook);
+  } catch (err) {
+    next(err);
+  }
+}
+
 //ERROR
-app.use((error, request, response, next) => {
+app.use((error, response) => {
   response.status(500).send(error.message);
 });
 
