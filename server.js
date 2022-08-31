@@ -4,8 +4,9 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+//MIDDLEWARE
 app.use(cors());
-
+app.use(express.json());
 // MONGOOSE
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_URL);
@@ -22,6 +23,9 @@ db.once('open', function () {
 
 // ROUTES
 app.get('/books', getBooks);
+app.post('books', postBooks);
+app.delete('/books/:id', deleteBooks);
+
 app.get('/', (request, response) => {
   response.status(200).send('Welcome!');
 });
@@ -40,7 +44,24 @@ async function getBooks(request, response, next) {
     next(error);
   }
 }
-
+async function postBooks(req, res, next) {
+  console.log(req.body);
+  try {
+    let createdBook = await Book.create(req.body);
+    res.status(200).send(createdBook);
+  } catch(err) {
+    next(err);
+  }
+}
+async function deleteBooks(req, res, next) {
+  console.log(req.params.id);
+  try {
+    await Book.findByIdAndDelete(req.params.id);
+    res.status(200).send('Delete book');
+  } catch(err) {
+    next (err);
+  }
+}
 //ERROR
 app.use((error, request, response, next) => {
   response.status(500).send(error.message);
